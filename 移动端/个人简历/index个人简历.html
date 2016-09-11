@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>个人简历</title>
+	
+	<link rel="stylesheet" href="css/swiper-3.3.1.min.css">
+	 <link rel="stylesheet" href="css/animate.css">
+</head>
+<style>
+	@keyframes musicRotate{
+		0%{
+			transform:rotate(0deg);
+		}
+		100%{
+			transform:rotate(360deg)
+		}
+	}
+	@-webkit-keyframes musicRotate{
+		0%{
+			-webkit-transform:rotate(0deg);
+		}
+		100%{
+			-webkit-transform:rotate(360deg)
+		}
+	}
+	
+	html,body{
+		 position:absolute;
+            width:100%;
+            height:100%;
+            margin:0;
+            padding:0;
+
+	}
+	.main{
+		position:absolute;
+		position:relative;
+		
+		width: 100%;
+		height: 100%;
+		background-image: url(images/main-bgc1.png);
+		-webkit-background-size: 100%;
+		background-size: 100%;
+		overflow: hidden;
+		transition:all 2s linear ;
+
+
+	}
+	.page{
+		
+			width:100%;
+            height:100%;
+            position:absolute;
+            left: 0;
+            top: 0;
+            transition:all 1s linear;
+            -webkit-transform:scaleX(1) translateY(0)rotate(0deg);
+        }
+	.pageDown{
+		-webkit-transform:scaleX(1) translateY(100%) rotate(0deg);
+	}
+	.pageUp{
+		-webkit-transform:scaleX(1) translateY(-100%) rotate(0deg);
+	}
+	a.arrow{
+		 position:absolute;
+            display: block;
+            bottom:0px;
+            width:14%;
+            left:43%;
+
+	}
+	a img{
+		width:100%;
+	}
+	.musicBtn{
+		position:absolute;
+		display: block;
+		right:8%;
+		top:8%;
+		width:10%;
+		
+
+	}
+	.advanced{
+		width: 15%;
+		height: 85%;
+		position:absolute;
+	/*	display: block;*/
+		left:8%;
+		top:8%;
+		
+		font-size:25px;
+		color:#242627;
+		text-align: center;
+
+	}
+	.tab{
+		height: 25%;
+		border:2px solid #fff;
+		border-bottom:4px solid #fff;
+		background-color: #eadcf6;
+
+	}
+	.tab4{
+		border-bottom:2px solid #fff;
+	}
+	p{
+		margin-top:23%;
+	
+	}
+	.page1 .diyuan1{
+		width: 65%;
+		height: 37%;
+		position: absolute;
+		top:18%;
+		left:20%;
+		background-color: rgba(178,155,227,0.5);
+		border-radius: 55%;
+
+	}
+	.page1 .diyuan2{
+		width: 65%;
+		height: 37%;
+		position: absolute;
+		top:25%;
+		left:18%;
+		background-color: rgba(178,155,227,0.5);
+		border-radius: 55%;
+
+	}
+	.page1 .diyuan3{
+		width: 65%;
+		height: 37%;
+		position: absolute;
+		top:25%;
+		left:27%;
+		background-color: rgba(178,155,227,0.5);
+		border-radius: 55%;
+
+	}
+	.page1 .jianli{
+		position: absolute;
+			
+		top:22% ;
+		left: 22%;
+		width: 65%;
+		height: 37%;
+		background-color: #b29be6;
+	
+		border-radius: 50%;
+	
+
+
+
+	}
+	.page1 p{
+		
+		text-align: center;
+		font-weight: bold;
+		padding-top: 20%;
+		font-size: 50px;
+		color:#fff;
+		padding: 0;
+		
+	}
+	.page1 span{
+		display: block;
+		text-align: center;
+	
+	
+		color:#fff;
+		color:#fff;
+		font-size: 20px;
+		margin-top: -10%;
+		font-weight: normal;
+	}
+	.page2 .photo-xu{
+
+		width:53%;
+		position:absolute;
+		top: 16.5%;
+		left: 36.5%;
+		
+		
+	}
+	.page2 .photo-xu img{
+		width: 100%;
+
+		animation:musicRotate 3s linear infinite;
+		-webkit-animation:musicRotate 3s linear infinite;
+	}
+	.page2 .photo-bg{
+		position:absolute;
+		z-index:0;
+		background-color: #fff;
+		width:50%;
+		height: 28%;
+		
+		top: 17.5%;
+		left: 38%;
+		border-radius: 50%;
+	}
+	.page2 .photo{
+		position:absolute;
+		width:45%;
+		top: 19%;
+		left: 40.5%;
+		border-radius: 50%;
+
+
+	}
+	.page2 .photo img{
+		width: 100%;
+		border-radius: 50%;
+	}
+	.page2 article{
+
+
+		/*transform:scaleX(-100px)*/
+		position:absolute;
+	
+		width: 70%;
+		top:50%;
+		left:30%;
+		background-color: rgba(255,255,255,0.5);
+		font-size: 20px;
+		line-height: 35px;
+	}
+	.page2 article span{
+		font-weight: bold;
+	}
+	
+	}
+	.page3 article{
+		margin-top: 20%;
+		margin-bottom:13%;
+	}
+	.page3 p{
+		margin: 0;
+		padding: 0;
+		width: 70%;
+		margin-top: 5%;
+		margin-left:30%;
+		background-color: rgba(255,255,255,0.3);
+		font-size: 16px;
+		color:#666;
+		line-height: 30px;
+	}
+	.page3 p.p1{
+		margin-top: 15%;
+	}
+	.page3 article span{
+		display: block;		
+		font-weight: bold;
+	}
+	.page4 span{
+		display: block;
+		font-size: 20px;
+		text-align: center;
+	}
+
+	.page4 .jn1{
+
+		margin-top:8%;
+		margin-left:50%;
+		width: 70px;
+		height: 70px;
+		border-radius: 50%;
+		background-color: #8bc152;
+	}
+	.page4 .jn2{
+		margin-top:8%;
+		margin-left:70%;
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;	
+		background-color: #434a54;
+	}
+	.page4 .jn3{
+		margin-top:10%;
+		margin-left:80%;
+		width: 75px;
+		height: 75px;	
+		border-radius: 50%;
+		background-color: #ec87c1;
+	}
+	.page4 .jn4{
+		margin-top:12%;
+		margin-left:80%;
+		width: 75px;
+		height: 75px;
+		border-radius: 50%;
+		background-color: #a0d468;
+	}
+	.page4 .jn5{
+		margin-top:14%;
+		margin-left:70%;
+		width: 70px;
+		height: 70px;
+		border-radius: 50%;
+		background-color: #74bb9d;
+	}
+	.page4 .jn6{
+		margin-top:3%;
+		margin-left:40%;
+		width: 90px;
+		height: 90px;
+		border-radius: 50%;
+		background-color: #50c1e9;
+	}
+	
+	.page4 .jn7{
+		margin-top:-120%;
+		margin-left:30%;
+		width: 105px;
+		height: 105px;
+		border-radius: 50%;
+		background-color: #f6bb43;
+	}
+	.page4 p{
+		margin-top:13%  ;
+		margin-left: 26%;
+		width: 150px;
+		height: 150px;
+		font-size: 22px;
+		background-color: rgba(255,255,255,0.5);
+	}
+	.page5 h3{
+		color:#000;
+		font-size: 35px;
+
+	}
+	.page5 article{
+		margin-top:18% ;
+		margin-left:30% ;
+		width: 67%;
+		background-color: rgba(255,255,255,0.3);
+		-webkit-background-size: 100%;
+		background-size: 100%;
+		font-size: 22px;
+		line-height: 26px;
+		color:#4b4848;
+
+	}
+	.page5 .lianxi{
+		width: 67%;
+		margin-top: 15%;
+		margin-left:30%;
+		font-size: 25px;
+
+		color:#4b4848;
+		
+		
+
+	}
+	.page5 span{
+		
+		color:#000;
+		font-weight: bold;
+	}
+	
+		
+		
+	.page5 .e-mail{
+		font-size: 20px;
+	}
+	.page5 .e-mail,.qq,.tel{
+		width: 90%;
+		height: 15%;
+		margin-top: 10%;
+		background-color: rgba(255,255,255,0.3);
+	}
+	.page5 img{
+		padding-left:0px;
+		width:35px;
+		height:35px;
+		margin-right: 10%;
+		
+	}
+	.page5 .e-mail img{
+		margin-right: 0;
+	}
+	.delay-2{
+		animation-delay:6s;
+	}
+	.delay-4{
+		animation-delay:9s;
+	}
+	.change-bgc{
+		background-color: #b29be6;
+	}
+	.musicAni{
+		animation:musicRotate 3s linear infinite;
+		-webkit-animation:musicRotate 3s linear infinite;
+	}
+
+</style>
+<body>
+	<div class="main">
+		<div class="advanced ">
+			<div class="tab ziliao"><p>个<br>人<br>资<br>料</p></div>
+			<div class="tab jingli"><p>学<br>校<br>经<br>历</p></div>
+			<div class="tab jineng"><p>工<br>作<br>技<br>能</p></div>
+			<div class="tab tab4 gangwei"><p>期<br>望<br>岗<br>位</p></div>	
+		</div>
+		<div class="page page1">
+			<div class="diyuan1"></div>
+			<div class="diyuan2"></div>
+			<div class="diyuan3"></div>	
+			<div class="jianli"><p>个人</br>简历</p><span>霍梦林</span></div>
+		</div>
+			
+		
+		<div class="page page2 pageDown">
+			<div class="photo-xu"><img src="images/xuxian1.png" alt=""></div>
+			<div class="photo-bg"></div>
+			<div class="photo"><img src="images/photo.jpg" alt=""></div>
+			<div class="xinxi">
+				<article>
+					<span>姓名</span>:monmon</br>
+					<span>性别</span>:女</br>
+					<span>年龄:</span>：23</br>
+					<span>毕业院校</span>：石家庄建工科技学院</br>
+					<span>毕业专业</span>：计算机科学与技术</br>
+					<span>毕业时间</span>：2014年</br>
+					<span>婚姻状况</span>：未婚</br>
+					<span>现居住地</span>：北京</br>
+				</article>
+			</div>
+		</div>
+		<div class="page page3 pageDown">
+		<article>
+			<p class="p1 jl animated fadeInRight delay-2"><span>2011-2014</span>就读于石家庄建工科技学院</p>
+			<p class="jl animated fadeInRight delay-2 "><span>2012冬</span>保定市徐水县&社会实践:义务维修电脑</p>
+			<p class="jl animated fadeInRight delay-2 "><span>2013夏</span>秦皇岛市北戴河区&自主创业实践：冷饮</p>
+			<p class="jl animated fadeInRight delay-2 "><span>2014-2015</span></p>
+			<p class="jl animated fadeInRight delay-2 "><span>2015.9</span></p>
+			</article>
+		</div>
+		<div class="page page4 pageDown">
+			<span class="jn1 animated bounceInDown delay-4"></br>h5制作</span>
+			<span class="jn2 animated bounceInDown delay-4"></br>ps制作</span>
+			<span class="jn3 animated bounceInDown delay-4">js</br>juquery</span>
+			<span class="jn4 animated bounceInDown delay-4"></br>XML</br>HTML</span>
+			<span class="jn5 animated bounceInDown delay-4">office办公软件</span>
+			<span class="jn6 animated bounceInDown delay-4">Dream</br>weaver制作</span>
+			<span class="jn7 animated bounceInDown delay-2"></br>Asq,C#，C语言，java语言</span>
+			
+			<p>精通计算机语言，主修多种相关课程，具有编程思维，能正常处理相关工作</p>
+		</div>
+		<div class="page page5 pageDown">
+			<article class="article1 animated flipInY">
+				<h3>期望岗位</h3>
+				<span>地点 </span>北京</br>
+				<span>岗位 </span>前端工程></br>
+				<span>薪资 </span>10k-12></br>
+				<span>行业 </span>互联网行></br>
+				<span>其他 </span>可以接受加班，注重团队协作，有团队协作精神，喜欢挑战不同工作。
+			</article>
+			<div class="lianxi">
+			<div class="e-mail"><img src="images/email.jpg" alt=""><span class="xinxi">15933591213@163.com</span></div>
+			<div class="qq"><img src="images/qq.jpg" alt=""><span class="xinxi">329053928</span></div>
+			<div class="tel"><img src="images/phone-number.png" alt=""><span class="xinxi">18713575939</span></div>
+			</div>
+		</div>
+		
+		<a href="javascritp:void(0)" class="arrow">
+			<img src="images/arrow.png" alt="">
+		</a>
+		<a href="javascritp:void(0)" class="musicBtn musicAni" id="musicBtn"
+		>
+			<img src="images/music1.png" alt="" >
+		</a>
+	</div>
+	<audio  id="music" src="source/Carly Rae Jepsen-I Really Like You.mp3" autoplay loop></audio>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/touch.js"></script>
+<script src="js/swiper-3.3.1.jquery.min.js"></script>
+<script src="js/swiper.animate1.0.2.min.js"></script>
+
+<script>
+	window.onload = function(e) {
+		$(".advanced").css("display","none")
+	}
+	$(document).ready(function(){
+    var curIndex=0;
+    var pageNum=$(".page").length-1
+    $(".main").on("swipeUp",function(e){
+    	
+    		
+
+    	
+    	
+        if(curIndex>=pageNum){
+            return;
+        }
+    console.log(curIndex)
+        $(".page").eq(curIndex).addClass("pageUp");
+        
+       	$(".advanced .tab").eq(curIndex).addClass("change-bgc")
+    	$(".advanced .tab").eq(curIndex).siblings().removeClass("change-bgc")
+        curIndex++;
+        if(curIndex!=0){
+        	$(".advanced").css("display","block")
+        }
+        $(".page").eq(curIndex).removeClass("pageDown"); 
+        $("page2 xinxi").addClass("")   
+    })
+
+
+$(".main").on("swipeDown",function(e){
+        if(curIndex<=0){
+            return;
+        }
+
+          
+        console.log(curIndex)
+        $(".page").eq(curIndex).addClass("pageDown"); 
+
+         curIndex--;
+         if(curIndex==0){
+       	$(".advanced").hide();
+
+       }
+         $(".advanced .tab").eq(curIndex-1).addClass("change-bgc")
+    	$(".advanced .tab").eq(curIndex-1).siblings().removeClass("change-bgc")
+        $(".page").eq(curIndex).removeClass("pageUp");
+       
+
+    })
+
+    var Music=document.getElementById("music")
+	
+	$("#musicBtn").on("tap",function(e){
+		if(Music.paused){
+			Music.play();
+			$("#musicBtn").addClass("musicAni")
+
+		}else{
+			Music.pause();
+			$("#musicBtn").removeClass("musicAni")
+		}
+
+	});
+})	
+</script>
+</body>
+</html>
